@@ -84,4 +84,47 @@ int main() {
 	* erase(ben,end) 删除[beg,end)区间数据，返回下一个数据位置
 	* erase(pos) // 删除pos位置数据，返回下一个数据位置
 	*/
+	//插入
+	deque<int>de1;
+	de1.push_back(10);
+	de1.push_back(20);
+	PrintfQuede(de1);
+	de1.push_front(100);
+	de1.push_front(200);
+	PrintfQuede(de1);
+	de1.pop_back();
+	PrintfQuede(de1);
+	de1.pop_front();
+	PrintfQuede(de1);
+	de1.insert(de1.begin(), 1000);
+	PrintfQuede(de1);
+	de1.insert(de1.begin(), 2, 10000);
+	PrintfQuede(de1);
+	de1.insert(de1.end(), 200);
+	PrintfQuede(de1);
+	de1.insert(de1.begin(), d1.begin(), d1.end());
+	PrintfQuede(de1);
+	//删除
+	deque<int>::iterator it = de1.begin();
+	it++;
+	de1.erase(it);
+	PrintfQuede(de1);
+	de1.erase(de1.begin(),de1.end()-4);
+	PrintfQuede(de1);
+	de1.clear();
+	PrintfQuede(de1);
+	cout << endl;
+	/*数据存取
+	* at()  返回相对应的索引的元素
+	* operator[] 返回相对应的索引的元素
+	* front() 返回第一个元素
+	* back() 返回最后一个元素
+	*/
+	for (int i = 0; i < d1.size(); i++) {
+		cout << d1[i] << " ";
+	}
+	cout << endl;
+	cout << d1.at(2) << endl;
+	cout << d1.front() << endl;
+	cout << d1.back() << endl;
 }
