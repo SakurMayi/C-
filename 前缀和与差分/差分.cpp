@@ -3,6 +3,12 @@
 #include <string>
 #include <iomanip>
 #include <algorithm>
+using namespace std;
+int d[6] = { 0 };
+void add(int l, int r, int v) {
+	d[l] += v;
+	d[r + 1] -= v;
+}
 int main(){
 /*
 	一维差分
