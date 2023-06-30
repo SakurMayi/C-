@@ -33,4 +33,5 @@ int main(){
 	}
 	memset(d, 0, sizeof(0));
 	cout << endl;
+
 }
