@@ -14,12 +14,12 @@ int main()
         cin >> a;
         vec.push_back(a);
     }
-    ::left = 0;//ÆðÊ¼µã
-    ::right = n - 1;//ÖÕµã
+    ::left = 0;//èµ·å§‹ç‚¹
+    ::right = n - 1;//ç»ˆç‚¹
     cin >> a;
     bool isprime = false;
-    while (::left <= ::right ) {//Ñ­»·ÅÐ¶¨Ìõ¼þ
-        mid = (::right + ::left) / 2;//¼ÆËãÖÐ¼äµã
+    while (::left <= ::right ) {//å¾ªçŽ¯åˆ¤å®šæ¡ä»¶
+        mid = (::right + ::left) / 2;//è®¡ç®—ä¸­é—´ç‚¹
         if (vec[mid] < a) {
             ::left = mid + 1;
         }
@@ -27,11 +27,11 @@ int main()
             ::right = mid - 1;
         }
         else {
-            cout << "Êý×éÖÐÓÐ´ËÔªËØ,ÏÂ±êÎª£º" << mid << endl;
+            cout << "æ•°ç»„ä¸­æœ‰æ­¤å…ƒç´ ,ä¸‹æ ‡ä¸ºï¼š" << mid << endl;
             isprime = true;
             break;
         }
     }
-    if(!isprime) cout << "Êý×éÖÐ²»´æÔÚ¸ÃÔªËØ" << endl;
+    if(!isprime) cout << "æ•°ç»„ä¸­ä¸å­˜åœ¨è¯¥å…ƒç´ " << endl;
     return 0;
 }
