@@ -4,11 +4,11 @@
 #include <functional>
 #include <ctime>
 using namespace std;
-/*³£ÓÃÅÅĞòËã·¨
-* 1. sort   ¶ÔÈİÆ÷ÄÚÅÅĞò
-* 2. random_shuffle Ï´ÅÆ£¬Ö¸¶¨·¶Î§ÄÚËæ»úµ÷Õû´ÎĞò
-* 3. merge ÈİÆ÷ÔªËØºÏ²¢£¬²¢´æ´¢µ½ÁíÒ»ÈİÆ÷ÖĞ
-* 4. reverse ·´×ªÖ¸¶¨·¶Î§ÄÚµÄÔªËØ
+/*å¸¸ç”¨æ’åºç®—æ³•
+* 1. sort   å¯¹å®¹å™¨å†…æ’åº
+* 2. random_shuffle æ´—ç‰Œï¼ŒæŒ‡å®šèŒƒå›´å†…éšæœºè°ƒæ•´æ¬¡åº
+* 3. merge å®¹å™¨å…ƒç´ åˆå¹¶ï¼Œå¹¶å­˜å‚¨åˆ°å¦ä¸€å®¹å™¨ä¸­
+* 4. reverse åè½¬æŒ‡å®šèŒƒå›´å†…çš„å…ƒç´ 
 */
 
 class Mycompare{
@@ -21,10 +21,10 @@ void Printf(int val) {
 	cout << val << " ";
 }
 /*sort(begin, end, elem)
-°´Öµ²éÕÒÔªËØ£¬ÕÒ²»µ½·µ»Ø½áÊøµü´úÆ÷Î»ÖÃ£¬·ñÔò·µ»ØÖ¸¶¨Î»ÖÃµü´úÆ÷
-begin ¿ªÊ¼µü´úÆ÷
-end ½áÊøµü´úÆ÷
-elem Î½´Ê
+æŒ‰å€¼æŸ¥æ‰¾å…ƒç´ ï¼Œæ‰¾ä¸åˆ°è¿”å›ç»“æŸè¿­ä»£å™¨ä½ç½®ï¼Œå¦åˆ™è¿”å›æŒ‡å®šä½ç½®è¿­ä»£å™¨
+begin å¼€å§‹è¿­ä»£å™¨
+end ç»“æŸè¿­ä»£å™¨
+elem è°“è¯
 */
 void test1() {
 	vector<int>vec;
@@ -32,20 +32,20 @@ void test1() {
 	vec.push_back(5);
 	vec.push_back(20);
 	vec.push_back(15);
-	//Ä¬ÈÏÊÇÉıĞò
+	//é»˜è®¤æ˜¯å‡åº
 	sort(vec.begin(), vec.end());
 	for_each(vec.begin(), vec.end(), Printf);
 	cout << endl;
-	//½µĞò
+	//é™åº
 	//sort(vec.begin(), vec.end(), greater<int>());
-	/*ÓÃ·Âº¯Êı*/
+	/*ç”¨ä»¿å‡½æ•°*/
 	sort(vec.begin(), vec.end(), Mycompare());
 	for_each(vec.begin(), vec.end(), Printf);
 	cout << endl;
 	cout << endl;
 }
 void test2(){
-	srand((unsigned int)time(NULL));//Éú²úËæ»úÖÖ×Ó£¬Ëæ×ÅÊ±¼ä±ä»¯£¬ÅÅĞòÒ²±ä»¯
+	srand((unsigned int)time(NULL));//ç”Ÿäº§éšæœºç§å­ï¼Œéšç€æ—¶é—´å˜åŒ–ï¼Œæ’åºä¹Ÿå˜åŒ–
 	vector<int>v;
 	for (int i = 0; i < 10; i++)
 	{
@@ -60,12 +60,12 @@ void test2(){
 }
 /*merge
 * merge(beg1,end1,beg2,end2,dest)
-* 2¸öÈİÆ÷±ØĞëÓĞĞò
-* beg1 ÈİÆ÷Ò»¿ªÊ¼µü´úÆ÷
-* beg2 ÈİÆ÷¶ş¿ªÊ¼µü´úÆ÷
-* end1 ÈİÆ÷Ò»½áÊøµü´úÆ÷
-* end2 ÈİÆ÷¶ş½áÊøµü´úÆ÷
-* dest Ä¿±êÈİÆ÷¿ªÊ¼µü´úÆ÷
+* 2ä¸ªå®¹å™¨å¿…é¡»æœ‰åº
+* beg1 å®¹å™¨ä¸€å¼€å§‹è¿­ä»£å™¨
+* beg2 å®¹å™¨äºŒå¼€å§‹è¿­ä»£å™¨
+* end1 å®¹å™¨ä¸€ç»“æŸè¿­ä»£å™¨
+* end2 å®¹å™¨äºŒç»“æŸè¿­ä»£å™¨
+* dest ç›®æ ‡å®¹å™¨å¼€å§‹è¿­ä»£å™¨
 */
 void test3(){
 	vector<int>v1;
@@ -97,10 +97,10 @@ void test4(){
 	{
 		v.push_back(i);
 	}
-	cout << "·´×ªÇ°£º";
+	cout << "åè½¬å‰ï¼š";
 	for_each(v.begin(),v.end(),Printf);
 	cout << endl;
-	cout << "·´×ªºó£º";
+	cout << "åè½¬åï¼š";
 	reverse(v.begin(), v.end());
 	for_each(v.begin(), v.end(), Printf);
 }
