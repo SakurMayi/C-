@@ -1,10 +1,13 @@
 #include <iostream>
 #include <set>
+#include <tr1/unordered_set>
 #include <algorithm>
 using namespace std;
-/*set容器和multset容器：插入时自动排序,默认从小到大排序
+/*
+set容器和multset容器：插入时自动排序,默认从小到大排序
     区别：前者不允许有重复元素，后者允许有重复元素
     二者本质：都输入关联式容器，底层都用二叉树实现
+unordered_set：无序放入元素
 */
 /*方法：set和multset一样
 set<T> set;//默认构造函数
