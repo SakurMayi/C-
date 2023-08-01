@@ -64,3 +64,27 @@ void merge1(int i, int j) //合并(按秩合并)
 		Rank[y]++; //如果深度相同且根节点不同，则新的根节点的深度+1
 	}
 }
+
+带权并查集
+//查询
+int find(int x)
+{
+	if (x != Fa[x])
+	{
+		int tmp = Fa[x];  //记录父节点
+		Fa[x] = find(Fa[x]);  //将x的父节点设置为根节点
+		value[x] += value[tmp];
+	}
+	return Fa[x];
+}
+//合并
+void merge(int i, int j)
+{
+	int x = find = (i), y = find(j);
+	if (x != y)
+	{
+		Fa[x] = y;
+		value[x] = value[y] + s - value[x];
+	}
+}
+
